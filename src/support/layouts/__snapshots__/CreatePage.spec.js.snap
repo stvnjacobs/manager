@@ -5740,6 +5740,11 @@ ShallowWrapper {
             displayHeader={true}
           />
         </section>,
+        <section>
+          <TicketResources
+            displayHeader={true}
+          />
+        </section>,
         <Card
           className=""
         >
@@ -6060,6 +6065,29 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <TicketHelper
+            displayHeader={true}
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "displayHeader": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <TicketResources
             displayHeader={true}
           />,
         },
@@ -7392,6 +7420,11 @@ ShallowWrapper {
               displayHeader={true}
             />
           </section>,
+          <section>
+            <TicketResources
+              displayHeader={true}
+            />
+          </section>,
           <Card
             className=""
           >
@@ -7712,6 +7745,29 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <TicketHelper
+              displayHeader={true}
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "displayHeader": true,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <TicketResources
               displayHeader={true}
             />,
           },

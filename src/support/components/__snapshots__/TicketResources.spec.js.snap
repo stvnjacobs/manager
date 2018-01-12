@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`support/components/TicketResources should render without error 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TicketResources />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <ul
+        className="list-unstyled"
+      >
+        <li>
+          <ExternalLink
+            to="https://forum.linode.com/"
+          >
+            Community forum
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink
+            to="https://linode.com/docs"
+          >
+            User documentation and guides
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink
+            to="https://developers.linode.com/"
+          >
+            Deveoper documentation and guides
+          </ExternalLink>
+        </li>
+        <li>
+          <ExternalLink
+            to="https://status.linode.com/"
+          >
+            Overall system status
+          </ExternalLink>
+        </li>
+      </ul>,
+      "className": "TicketResources",
+      "header": null,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <li>
+            <ExternalLink
+              to="https://forum.linode.com/"
+            >
+              Community forum
+            </ExternalLink>
+          </li>,
+          <li>
+            <ExternalLink
+              to="https://linode.com/docs"
+            >
+              User documentation and guides
+            </ExternalLink>
+          </li>,
+          <li>
+            <ExternalLink
+              to="https://developers.linode.com/"
+            >
+              Deveoper documentation and guides
+            </ExternalLink>
+          </li>,
+          <li>
+            <ExternalLink
+              to="https://status.linode.com/"
+            >
+              Overall system status
+            </ExternalLink>
+          </li>,
+        ],
+        "className": "list-unstyled",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExternalLink
+              to="https://forum.linode.com/"
+            >
+              Community forum
+            </ExternalLink>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Community forum",
+              "to": "https://forum.linode.com/",
+            },
+            "ref": null,
+            "rendered": "Community forum",
+            "type": [Function],
+          },
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExternalLink
+              to="https://linode.com/docs"
+            >
+              User documentation and guides
+            </ExternalLink>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "User documentation and guides",
+              "to": "https://linode.com/docs",
+            },
+            "ref": null,
+            "rendered": "User documentation and guides",
+            "type": [Function],
+          },
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExternalLink
+              to="https://developers.linode.com/"
+            >
+              Deveoper documentation and guides
+            </ExternalLink>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Deveoper documentation and guides",
+              "to": "https://developers.linode.com/",
+            },
+            "ref": null,
+            "rendered": "Deveoper documentation and guides",
+            "type": [Function],
+          },
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ExternalLink
+              to="https://status.linode.com/"
+            >
+              Overall system status
+            </ExternalLink>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": "Overall system status",
+              "to": "https://status.linode.com/",
+            },
+            "ref": null,
+            "rendered": "Overall system status",
+            "type": [Function],
+          },
+          "type": "li",
+        },
+      ],
+      "type": "ul",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <ul
+          className="list-unstyled"
+        >
+          <li>
+            <ExternalLink
+              to="https://forum.linode.com/"
+            >
+              Community forum
+            </ExternalLink>
+          </li>
+          <li>
+            <ExternalLink
+              to="https://linode.com/docs"
+            >
+              User documentation and guides
+            </ExternalLink>
+          </li>
+          <li>
+            <ExternalLink
+              to="https://developers.linode.com/"
+            >
+              Deveoper documentation and guides
+            </ExternalLink>
+          </li>
+          <li>
+            <ExternalLink
+              to="https://status.linode.com/"
+            >
+              Overall system status
+            </ExternalLink>
+          </li>
+        </ul>,
+        "className": "TicketResources",
+        "header": null,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              <ExternalLink
+                to="https://forum.linode.com/"
+              >
+                Community forum
+              </ExternalLink>
+            </li>,
+            <li>
+              <ExternalLink
+                to="https://linode.com/docs"
+              >
+                User documentation and guides
+              </ExternalLink>
+            </li>,
+            <li>
+              <ExternalLink
+                to="https://developers.linode.com/"
+              >
+                Deveoper documentation and guides
+              </ExternalLink>
+            </li>,
+            <li>
+              <ExternalLink
+                to="https://status.linode.com/"
+              >
+                Overall system status
+              </ExternalLink>
+            </li>,
+          ],
+          "className": "list-unstyled",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ExternalLink
+                to="https://forum.linode.com/"
+              >
+                Community forum
+              </ExternalLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Community forum",
+                "to": "https://forum.linode.com/",
+              },
+              "ref": null,
+              "rendered": "Community forum",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ExternalLink
+                to="https://linode.com/docs"
+              >
+                User documentation and guides
+              </ExternalLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "User documentation and guides",
+                "to": "https://linode.com/docs",
+              },
+              "ref": null,
+              "rendered": "User documentation and guides",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ExternalLink
+                to="https://developers.linode.com/"
+              >
+                Deveoper documentation and guides
+              </ExternalLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Deveoper documentation and guides",
+                "to": "https://developers.linode.com/",
+              },
+              "ref": null,
+              "rendered": "Deveoper documentation and guides",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ExternalLink
+                to="https://status.linode.com/"
+              >
+                Overall system status
+              </ExternalLink>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": "Overall system status",
+                "to": "https://status.linode.com/",
+              },
+              "ref": null,
+              "rendered": "Overall system status",
+              "type": [Function],
+            },
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

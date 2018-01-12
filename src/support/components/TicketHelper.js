@@ -106,27 +106,6 @@ export default class TicketHelper extends Component {
             </small></p>
           </li>
         </ul>
-        <h3 className="sub-header">Resources</h3>
-        <ul className="list-unstyled">
-          <li>
-            <ExternalLink to="https://forum.linode.com/">Community forum</ExternalLink>
-          </li>
-          <li>
-            <ExternalLink to="https://www.linode.com/docs/">
-              User documentation and guides
-            </ExternalLink>
-          </li>
-          <li>
-            <ExternalLink to="https://developers.linode.com/">
-              Developer documentation and guides
-            </ExternalLink>
-          </li>
-          <li>
-            <ExternalLink to="https://status.linode.com/">
-              Overall system status
-            </ExternalLink>
-          </li>
-        </ul>
       </Card>
     );
   }

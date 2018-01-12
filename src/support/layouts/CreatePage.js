@@ -24,6 +24,7 @@ import { ChainedDocumentTitle } from '~/components';
 import { ComponentPreload as Preload } from '~/decorators/Preload';
 
 import TicketHelper from '../components/TicketHelper';
+import TicketResources from '../components/TicketResources';
 
 
 export class CreatePage extends Component {
@@ -96,6 +97,9 @@ export class CreatePage extends Component {
         </header>
         <section>
           <TicketHelper displayHeader />
+        </section>
+        <section>
+          <TicketResources displayHeader />
         </section>
         <Card>
           <Form
