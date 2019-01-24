@@ -12,7 +12,7 @@ node('docker') {
   }
 
   stage('Debug') {
-    img.inside() {
+    img.inside {
       sh "yarn"
     }
   }
