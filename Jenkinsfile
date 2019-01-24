@@ -1,19 +1,17 @@
 #!/usr/bin/env groovy
 
 node('docker') {
-  def img;
+  checkout scm
 
-  stage('Checkout') {
-    checkout scm
-  }
-
-  stage('Build') {
-    img = docker.build("manager-builder:${env.BUILD_ID}")
-  }
-
-  stage('Debug') {
-    img.inside {
-      sh "yarn"
+  docker.build("manager-builder:${env.BUILD_ID}").inside {
+    stage('Install Depenencies') {
+      sh "yarn install --frozen-lockfile"
+    }
+    stage('Build') {
+      sh "yarn build"
+    }
+    stage('Test') {
+      sh "yarn test --coverage"
     }
   }
 }
