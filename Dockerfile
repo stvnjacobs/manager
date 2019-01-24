@@ -4,4 +4,4 @@ WORKDIR /src
 
 COPY . .
 
-ENTRYPOINT ["yarn"]
+CMD ["yarn"]
