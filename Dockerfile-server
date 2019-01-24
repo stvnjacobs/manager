@@ -15,4 +15,4 @@ RUN yarn build
 # Distributable image
 FROM nginx:alpine
 
-COPY --from=build /src/build /usr/share/nginx/html
+COPY --from=builder /src/build /usr/share/nginx/html
