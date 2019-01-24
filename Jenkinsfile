@@ -25,11 +25,10 @@ def setEnv() {
 node('docker') {
   checkout scm
 
+  def img;
+
   withEnv(setEnv()) {
     docker.image("node:lts-alpine").inside {
-      stage('Debug Environment') {
-        sh 'printenv'
-      }
       stage('Install Depenencies') {
         sh "yarn install --frozen-lockfile"
       }
@@ -39,6 +38,17 @@ node('docker') {
       stage('Test') {
         sh "yarn test --coverage"
       }
+    }
+
+    stage('Package') {
+      img = docker.build("linode-manager:${env.BUILD_ID}", "./Dockerfile-server")
+    }
+  }
+
+  stage('Debug') {
+    img.inside {
+      sh "ls -alh"
+      sh "ls -alh /usr/share/nginx/html"
     }
   }
 }
