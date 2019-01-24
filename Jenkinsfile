@@ -29,7 +29,7 @@ node('docker') {
 
   withEnv(setEnv()) {
     docker.image("node:lts-alpine").inside {
-      stage('Install Depenencies') {
+      stage('Install Dependencies') {
         sh "yarn install --frozen-lockfile"
       }
       stage('Build') {
@@ -41,7 +41,7 @@ node('docker') {
     }
 
     stage('Package') {
-      img = docker.build("linode-manager:${env.BUILD_ID}", "./Dockerfile-server")
+      img = docker.build("linode-manager:${env.BUILD_ID}", "-f Dockerfile-server .")
     }
   }
 
