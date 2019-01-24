@@ -3,7 +3,7 @@
 node('docker') {
   checkout scm
 
-  docker.build("manager-builder:${env.BUILD_ID}").inside {
+  docker.image("node:lts-alpine").inside {
     stage('Install Depenencies') {
       sh "yarn install --frozen-lockfile"
     }
