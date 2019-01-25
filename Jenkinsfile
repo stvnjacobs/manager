@@ -45,10 +45,10 @@ node('docker') {
     }
   }
 
-  stage('Debug') {
-    img.inside {
-      sh "ls -alh"
-      sh "ls -alh /usr/share/nginx/html"
+  stage('Publish') {
+    docker.withRegistry('https://registry.stj.io', 'registry-stj-io-steven') {
+      img.push()
+      img.push('testing')
     }
   }
 }
