@@ -7,16 +7,22 @@ def setEnv() {
   envs.REACT_APP_LOGIN_ROOT = 'https://login.linode.com'
 
   if (env.BRANCH_NAME == 'master') {
-    envs.REACT_APP_APP_ROOT = 'https://manager.master.pg.stj.io'
-    envs.REACT_APP_CLIENT_ID = ''
+    withCredentials([string(credentialsId: 'master-client-id', variable: 'CLIENT_ID')]) {
+      envs.REACT_APP_APP_ROOT = 'https://manager.master.pg.stj.io'
+      envs.REACT_APP_CLIENT_ID = env.CLIENT_ID
+    }
   }
   else if (env.BRANCH_NAME == 'develop') {
-    envs.REACT_APP_APP_ROOT = 'https://manager.develop.pg.stj.io'
-    envs.REACT_APP_CLIENT_ID = ''
+    withCredentials([string(credentialsId: 'develop-client-id', variable: 'CLIENT_ID')]) {
+      envs.REACT_APP_APP_ROOT = 'https://manager.develop.pg.stj.io'
+      envs.REACT_APP_CLIENT_ID = env.CLIENT_ID
+    }
   }
   else if (env.BRANCH_NAME == 'release') {
-    envs.REACT_APP_APP_ROOT = 'https://manager.release.pg.stj.io'
-    envs.REACT_APP_CLIENT_ID = ''
+    withCredentials([string(credentialsId: 'release-client-id', variable: 'CLIENT_ID')]) {
+      envs.REACT_APP_APP_ROOT = 'https://manager.release.pg.stj.io'
+      envs.REACT_APP_CLIENT_ID = env.CLIENT_ID
+    }
   }
 
   return envs.collect { key, value -> "${key}=${value}" }
