@@ -42,7 +42,7 @@ node('docker') {
         sh "yarn build"
       }
       stage('Test') {
-        sh "yarn test --coverage"
+        sh 'yarn test --ci --coverage --testResultsProcessor="jest-junit"'
       }
     }
 
