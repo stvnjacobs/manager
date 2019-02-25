@@ -43,16 +43,16 @@ const Lish = DefaultLoader({
 initAnalytics(GA_ID, isProduction);
 initTagManager(GTM_ID);
 
-if (theme.get() === 'dark') {
+if (theme.get() === 'light') {
   sendEvent({
     category: 'Theme Choice',
-    action: 'Dark Theme',
+    action: 'Light Theme',
     label: location.pathname
   });
 } else {
   sendEvent({
     category: 'Theme Choice',
-    action: 'Light Theme',
+    action: 'Dark Theme',
     label: location.pathname
   });
 }

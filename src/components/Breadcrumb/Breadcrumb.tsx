@@ -38,7 +38,7 @@ const styles: StyleRulesCallback<ClassNames> = theme => ({
   linkText: {
     display: 'flex',
     alignItems: 'center',
-    color: '#3683DC',
+    color: '#fff',
     borderColor: theme.color.grey,
     whiteSpace: 'nowrap',
     '&:after': {

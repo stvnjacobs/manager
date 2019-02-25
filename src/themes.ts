@@ -8,7 +8,7 @@ export const light = createTheme({
 });
 
 const primaryColors = {
-  main: '#3683DC',
+  main: '#CF2923',
   light: '#4D99F1',
   dark: '#2466B3',
   text: '#ffffff',
@@ -52,12 +52,12 @@ export const dark = createTheme({
     }
   },
   bg: {
-    main: '#2F3236',
+    main: '#265EA8',
     offWhite: '#111111',
     offWhiteDT: '#444', // better handing for dark theme
-    navy: '#32363C',
+    navy: '#285621',
     lightBlue: '#222',
-    white: '#32363C',
+    white: '#D4C200',
     pureWhite: '#000',
     tableHeader: 'rgba(0, 0, 0, 0.15)'
   },
@@ -138,7 +138,7 @@ export const dark = createTheme({
         position: 'relative'
       },
       root: {
-        color: primaryColors.main,
+        color: '#fff',
         '&:hover': {
           backgroundColor: '#000'
         },

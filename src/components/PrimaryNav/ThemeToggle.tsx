@@ -75,7 +75,7 @@ export const ThemeToggle: React.StatelessComponent<CombinedProps> = props => {
         })}
         style={{ marginLeft: 4 }}
       >
-        Dark
+        Crayolo
       </span>
     </div>
   );

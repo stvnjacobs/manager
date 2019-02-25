@@ -357,13 +357,13 @@ export class App extends React.Component<CombinedProps, State> {
 }
 
 const themeDataAttr = () => {
-  if (themeStorage.get() === 'dark') {
+  if (themeStorage.get() === 'light') {
     return {
-      'data-qa-theme-dark': true
+      'data-qa-theme-light': true
     };
   }
   return {
-    'data-qa-theme-light': true
+    'data-qa-theme-dark': true
   };
 };
 

@@ -89,7 +89,7 @@ export interface Storage {
 
 export const storage: Storage = {
   theme: {
-    get: () => getStorage(THEME, 'light'),
+    get: () => getStorage(THEME, 'dark'),
     set: v => setStorage(THEME, v)
   },
   notifications: {
