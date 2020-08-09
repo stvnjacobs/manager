@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: yarn --froxen-lockfile
+    - run: yarn --frozen-lockfile
     - run: yarn workspace @linode/api-v4 test
     - run: yarn workspace @linode/api-v4 build
     - run: yarn workspace linode-manager test
