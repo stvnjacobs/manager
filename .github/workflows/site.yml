@@ -17,6 +17,9 @@ jobs:
     - run: yarn workspace @linode/api-v4 build
     - run: yarn workspace linode-manager test
     - run: yarn workspace linode-manager build
+      env:
+        REACT_APP_APP_ROOT: https://${{ secrets.AWS_S3_BUCKET }}.website-us-east-1.linodeobjects.com
+        REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
