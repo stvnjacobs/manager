@@ -30,20 +30,3 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: us-east-1
         SOURCE_DIR: packages/manager/build
-
-  deploy:
-    runs-on: ubuntu-latest
-    outputs:
-      username: ${{ steps.hello.outputs.username }}
-    steps:
-      - id: hello
-        uses: stvnjacobs/github-actions-linode@v1
-        with:
-          linodeToken: ${{ secrets.LINODE_TOKEN }}
-      - run: echo ${{ steps.hello.outputs.username }}
-
-  greet:
-    runs-on: ubuntu-latest
-    needs: deploy
-    steps:
-      - run: echo ${{ needs.deploy.outputs.username }}
