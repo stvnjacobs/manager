@@ -2,7 +2,7 @@ name: publish Linode Cloud Manager
 
 on:
   push:
-    branches: [ ci/publish-manager, ci/action-demo ]
+    branches: [ ci/publish-manager ]
 
 jobs:
   build:

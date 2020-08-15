@@ -1,0 +1,23 @@
+name: demo
+
+on:
+  push:
+    branches: [ ci/action-demo ]
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      username: ${{ steps.hello.outputs.username }}
+    steps:
+      - id: hello
+        uses: stvnjacobs/github-actions-linode@v1
+        with:
+          linodeToken: ${{ secrets.LINODE_TOKEN }}
+      - run: echo ${{ steps.hello.outputs.username }}
+
+  greet:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - run: echo ${{ needs.setup.outputs.username }}
