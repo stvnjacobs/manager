@@ -29,7 +29,7 @@ jobs:
         uses: stvnjacobs/github-actions-linode@v2
         with:
           linodeToken: ${{ secrets.LINODE_TOKEN }}
-          label: stvnjacobs-manager-${{ env.GITHUB_SHA1 }}
+          label: stvnjacobs-manager-${{ github.sha }}
           cluster: us-east-1
       - run: echo ${{ steps.createBucket.outputs.bucketLabel }}
       - run: echo ${{ steps.createBucket.outputs.bucketCreated }}
