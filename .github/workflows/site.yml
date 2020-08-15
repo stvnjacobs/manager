@@ -40,6 +40,7 @@ jobs:
         uses: stvnjacobs/github-actions-linode@v1
         with:
           linodeToken: ${{ secrets.LINODE_TOKEN }}
+      - run: echo ${{ steps.hello.outputs.username }}
 
   greet:
     runs-on: ubuntu-latest
