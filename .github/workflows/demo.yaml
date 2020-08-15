@@ -21,3 +21,18 @@ jobs:
     needs: setup
     steps:
       - run: echo ${{ needs.setup.outputs.username }}
+
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      username: ${{ steps.hello.outputs.username }}
+    steps:
+      - id: createBucket
+        uses: stvnjacobs/github-actions-linode@v2
+        with:
+          linodeToken: ${{ secrets.LINODE_TOKEN }}
+      - run: echo ${{ steps.createBucket.outputs.bucketLabel }}
+      - run: echo ${{ steps.createBucket.outputs.bucketCreated }}
+      - run: echo ${{ steps.createBucket.outputs.bucketCluster }}
+      - run: echo ${{ steps.createBucket.outputs.bucketHostname }}
+      - run: echo ${{ steps.createBucket.outputs.bucketSize }}
