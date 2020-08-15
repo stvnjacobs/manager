@@ -18,6 +18,6 @@ jobs:
 
   greet:
     runs-on: ubuntu-latest
-    needs: deploy
+    needs: setup
     steps:
       - run: echo ${{ needs.setup.outputs.username }}
