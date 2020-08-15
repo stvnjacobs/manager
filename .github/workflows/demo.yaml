@@ -22,7 +22,7 @@ jobs:
     steps:
       - run: echo ${{ needs.setup.outputs.username }}
 
-  setup:
+  create:
     runs-on: ubuntu-latest
     outputs:
       username: ${{ steps.hello.outputs.username }}
