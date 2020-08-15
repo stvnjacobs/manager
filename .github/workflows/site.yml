@@ -33,7 +33,15 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    outputs:
+      username: ${{ steps.hello.outputs.username }}
     steps:
-      - uses: stvnjacobs/github-actions-linode@v1
+      - id: hello
+        uses: stvnjacobs/github-actions-linode@v1
         with:
           linodeToken: ${{ secrets.LINODE_TOKEN }}
+
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.deploy.outputs.username }}
