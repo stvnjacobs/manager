@@ -129,7 +129,7 @@ jobs:
       - run: tar -zcvf ${{ steps.vars.outputs.filename }} -C packages/manager/build .
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: ${{ steps.vars.outputs.filename }}
+          args: --exclude="*" --include="${{ steps.vars.outputs.filename }}"
         env:
           AWS_S3_ENDPOINT: https://us-east-1.linodeobjects.com
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
