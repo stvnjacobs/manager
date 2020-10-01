@@ -3,7 +3,7 @@ name: release
 on:
   push:
     branches:
-      - master
+      - ci/bundle-upload
 
 jobs:
   test-sdk:
@@ -117,17 +117,20 @@ jobs:
       - build-manager
     steps:
       - uses: actions/checkout@v2
+      - id: vars
+        run: |
+          echo ::set-output name=filename::linode-manager-$(date +%s)-$(git rev-parse --short=8 ${{ github.sha }}).tar.gz
       - uses: actions/download-artifact@v2
         with:
           name: linode-manager
           path: packages/manager/build
+      - run: tar -zcvf ${{ steps.vars.outputs.filename }} -C packages/manager/build .
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: --acl public-read --follow-symlinks --delete
+          args: ${{ steps.vars.outputs.filename }}
         env:
           AWS_S3_ENDPOINT: https://us-east-1.linodeobjects.com
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
-          SOURCE_DIR: packages/manager/build
