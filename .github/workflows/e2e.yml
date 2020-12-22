@@ -1,10 +1,4 @@
 name: Run Cypress E2E Tests
-env:
-  OAUTH_1: ${{ secrets.MANAGER_OAUTH_1 }}
-  OAUTH_2: ${{ secrets.MANAGER_OAUTH_2 }}
-  OAUTH_3: ${{ secrets.MANAGER_OAUTH_3 }}
-  OAUTH_4: ${{ secrets.MANAGER_OAUTH_4 }}
-  CLIENT_ID: ${{ secrets.CLIENT_ID }}
 on:
   push:
     branches:
@@ -15,7 +9,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        container: ['OAUTH_1', 'OAUTH_2', 'OAUTH_3', 'OAUTH_4']
+        # https://github.community/t/secrets-in-matrix/17307/3
+        user: [personal-account, prod-test-001, prod-test-002, prod-test-008]
+        include:
+          - user: personal-account
+            manager_oauth: MANAGER_OAUTH_1
+          - user: prod-test-001
+            manager_oauth: MANAGER_OAUTH_2
+          - user: prod-test-002
+            manager_oauth: MANAGER_OAUTH_3
+          - user: prod-test-008
+            manager_oauth: MANAGER_OAUTH_4
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -29,31 +33,17 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-      - run: |
-          echo "CYPRESS_RECORD_KEY=${{ secrets.CYPRESS_RECORD_KEY }}" >> $GITHUB_ENV
-          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
-      # personal account
-      - run: |
-          echo "MANAGER_OAUTH=$OAUTH_1" >> ./packages/manager/.env
-        if: matrix['container'] == 'OAUTH_1'
-        # prod-test-001
-      - run: |
-          echo "MANAGER_OAUTH=$OAUTH_2" >> ./packages/manager/.env
-        if: matrix['container'] == 'OAUTH_2'
-        # prod-test-002
-      - run: |
-          echo "MANAGER_OAUTH=$OAUTH_3" >> ./packages/manager/.env
-        if: matrix['container'] == 'OAUTH_3'
-        # prod-test-008
-      - run: |
-          echo "MANAGER_OAUTH=$OAUTH_4" >> ./packages/manager/.env
-        if: matrix['container'] == 'OAUTH_4'
-      - run: |
-          echo "REACT_APP_LAUNCH_DARKLY_ID=${{ secrets.REACT_APP_LAUNCH_DARKLY_ID }}" >> ./packages/manager/.env
-          echo "REACT_APP_CLIENT_ID=$CLIENT_ID" >> ./packages/manager/.env
+      - env:
+          REACT_APP_LAUNCH_DARKLY_ID: ${{ secrets.REACT_APP_LAUNCH_DARKLY_ID }}
+          REACT_APP_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          MANAGER_OAUTH: ${{ secrets[matrix.manager_oauth] }}
+        run: |
           yarn up &
       - name: Run tests
         uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           working-directory: packages/manager
           wait-on: 'http://localhost:3000'
